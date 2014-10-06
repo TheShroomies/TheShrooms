@@ -17,7 +17,4 @@ public class ShroomiteIngot extends Item
 		this.setTextureName("theshrooms:ShroomiteIngot");
 		
 	}
-	
-	
-	
 }
