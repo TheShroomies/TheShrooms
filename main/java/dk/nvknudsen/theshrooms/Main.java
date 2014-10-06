@@ -4,11 +4,13 @@ package dk.nvknudsen.theshrooms;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -22,10 +24,13 @@ public class Main
 {
 	
 	// Blocks Here
-	public static Block shroomiteore;
+	public static Block ShroomiteOre;
 	
 	// Items Here
-	public static Item shroomiteingot;
+	public static Item ShroomiteIngot;
+	
+	// Tools Here
+	
 	
 	// Making the block able to be played on a server
 	@SidedProxy(clientSide = ("dk.nvknudsen.theshrooms.client.ClientProxy"), serverSide = ("dk.nvknudsen.theshrooms.CommonProxy"))
@@ -36,22 +41,24 @@ public class Main
 	
 	
 	@EventHandler
-	public void init(FMLInitializationEvent e)
+	public void preInit(FMLPreInitializationEvent e)
 	{
 		
 		System.out.println("Initializing TheShrooms v. "+version);
 		
 		// Block registry
-		shroomiteore = new shroomiteore(5001, Material.rock);
+		ShroomiteOre = new ShroomiteOre(501, Material.rock);
 		
 		// Item registry
-		shroomiteingot = new shroomiteingot(5002);
+		ShroomiteIngot = new ShroomiteIngot(5002);
 		
-		MinecraftForge.setBlockHarvestLevel(shroomiteore, "pickaxe", 2);
-		GameRegistry.registerBlock(shroomiteore, "ShroomiteOre");
-		LanguageRegistry.addName(shroomiteore, "Shroomite Ore");
+		MinecraftForge.setBlockHarvestLevel(ShroomiteOre, "pickaxe", 2);
+		GameRegistry.registerBlock(ShroomiteOre, "ShroomiteOre");
+		LanguageRegistry.addName(ShroomiteOre, "Shroomite Ore");
+		GameRegistry.addSmelting(ShroomiteOre.blockID, new ItemStack(ShroomiteIngot), 1.0F);
 		
-		
+		GameRegistry.registerItem(ShroomiteIngot, "Shroomiteingot");
+		LanguageRegistry.addName(ShroomiteIngot, "Shroomite ingot");
 		
 	}
 }
