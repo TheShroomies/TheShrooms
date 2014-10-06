@@ -1,0 +1,16 @@
+[
+{
+  "modid": "theshrooms",
+  "name": "The Shrooms",
+  "description": "Do you hear them?",
+  "version": "1.0.0 Alpha",
+  "mcversion": "1.6.4",
+  "url": "http://www.nvknudsen.dk/",
+  "updateUrl": "",
+  "authors": ["N1ckles","Dzhimmi"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
