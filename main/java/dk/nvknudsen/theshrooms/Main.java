@@ -3,6 +3,7 @@ package dk.nvknudsen.theshrooms;
 // Imports (Derp)
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -14,6 +15,8 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 
 @Mod(modid = "theshrooms", version = Main.version)
@@ -32,7 +35,7 @@ public class Main
 	// Tools Here
 	
 	
-	// Making the block able to be played on a server
+	// Making the mod able to be played on a server
 	@SidedProxy(clientSide = ("dk.nvknudsen.theshrooms.client.ClientProxy"), serverSide = ("dk.nvknudsen.theshrooms.CommonProxy"))
 	public static CommonProxy proxy;
 	
@@ -50,7 +53,8 @@ public class Main
 		ShroomiteOre = new ShroomiteOre(501, Material.rock);
 		
 		// Item registry
-		ShroomiteIngot = new ShroomiteIngot(5002);
+		ShroomiteIngot = new ShroomiteIngot(5001);
+		
 		
 		MinecraftForge.setBlockHarvestLevel(ShroomiteOre, "pickaxe", 2);
 		GameRegistry.registerBlock(ShroomiteOre, "ShroomiteOre");
@@ -59,6 +63,8 @@ public class Main
 		
 		GameRegistry.registerItem(ShroomiteIngot, "Shroomiteingot");
 		LanguageRegistry.addName(ShroomiteIngot, "Shroomite ingot");
+		
+		
 		
 	}
 }
