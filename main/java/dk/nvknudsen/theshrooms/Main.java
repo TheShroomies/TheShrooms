@@ -5,8 +5,11 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
@@ -45,6 +48,9 @@ public class Main
 	
 	// Tools Here
 	public final static Item ShroomitePickaxe = new ItemPickaxe(5051, ShroomiteToolMaterial).setUnlocalizedName("ShroomitePickaxe").setTextureName("theshrooms:ShroomitePickaxe");
+	public final static Item ShroomiteShovel = new ItemSpade(5052, ShroomiteToolMaterial).setUnlocalizedName("ShroomiteShovel").setTextureName("theshrooms:ShroomiteShovel");
+	public final static Item ShroomiteSword = new ItemSword(5053, ShroomiteToolMaterial).setUnlocalizedName("ShroomiteSword").setTextureName("theshrooms:ShroomiteSword");
+	public final static Item ShroomiteAxe = new ItemAxe(5054, ShroomiteToolMaterial).setUnlocalizedName("ShroomiteAxe").setTextureName("theshrooms:ShroomiteAxe");
 	
 	// The technical version
 	public final static String version = "a1.0.0";
@@ -61,6 +67,12 @@ public class Main
 		
 		GameRegistry.registerItem(ShroomitePickaxe, "Shroomite Pickaxe");
 		LanguageRegistry.addName(ShroomitePickaxe, "Shroomite Pickaxe");
+		GameRegistry.registerItem(ShroomiteShovel, "Shroomite Shovel");
+		LanguageRegistry.addName(ShroomiteShovel, "Shroomite Shovel");
+		GameRegistry.registerItem(ShroomiteSword, "Shroomite Sword");
+		LanguageRegistry.addName(ShroomiteSword, "Shroomite Sword");
+		GameRegistry.registerItem(ShroomiteAxe, "Shroomite Axe");
+		LanguageRegistry.addName(ShroomiteAxe, "Shroomite Axe");
 		
 		// Harvest level
 		MinecraftForge.setBlockHarvestLevel(ShroomiteOre, "pickaxe", 2);
