@@ -7,13 +7,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import dk.nvknudsen.theshrooms.blocks.ShroomiteOre;
 import dk.nvknudsen.theshrooms.items.ShroomiteIngot;
 import dk.nvknudsen.theshrooms.worldgen.ShroomiteOreGen;
@@ -21,6 +18,7 @@ import dk.nvknudsen.theshrooms.worldgen.ShroomiteOreGen;
 
 @Mod(modid = "theshrooms", version = Main.version)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
+
 
 // The main class
 public class Main
@@ -37,7 +35,8 @@ public class Main
 	
 	// The technical version
 	public final static String version = "a1.0.0";
-		
+	
+
 	@EventHandler
 	public void init(FMLInitializationEvent e)
 	{
