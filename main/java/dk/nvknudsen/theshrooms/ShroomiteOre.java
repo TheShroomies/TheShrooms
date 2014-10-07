@@ -11,11 +11,11 @@ import sun.net.www.content.text.Generic;
 public class ShroomiteOre extends Block
 {
 
-	public ShroomiteOre(int par1, Material par2Material)
+	public ShroomiteOre(int par1)
 	{
 		
 		// All the properties
-		super(par1, par2Material);
+		super(par1, Material.rock);
 		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setHardness(2.0F);
 		this.setStepSound(soundStoneFootstep);
