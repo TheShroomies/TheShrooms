@@ -2,8 +2,13 @@ package dk.nvknudsen.theshrooms;
 
 // Imports
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -24,18 +29,20 @@ import dk.nvknudsen.theshrooms.worldgen.ShroomiteOreGen;
 public class Main
 {
 	
+	// Materials
+	public final static EnumToolMaterial ShroomiteToolMaterial = EnumHelper.addToolMaterial("Shroomite", 2, 1200, 12.0F, 2.0F, 30);
+	
 	// Blocks Here
 	public final static Block ShroomiteOre = new ShroomiteOre(501);
 	
 	// Items Here
-	public final  static Item ShroomiteIngot = new ShroomiteIngot(5001);
+	public final static Item ShroomiteIngot = new ShroomiteIngot(5001);
 	
 	// Tools Here
-	
+	public final static Item ShroomitePickaxe = new ItemPickaxe(5051, ShroomiteToolMaterial).setUnlocalizedName("ShroomitePickaxe").setTextureName("theshrooms:ShroomitePickaxe");
 	
 	// The technical version
 	public final static String version = "a1.0.0";
-	
 
 	@EventHandler
 	public void init(FMLInitializationEvent e)
@@ -46,6 +53,9 @@ public class Main
 		// Block & Item registrations
 		GameRegistry.registerBlock(ShroomiteOre, "shroomiteOre");
 		GameRegistry.registerItem(ShroomiteIngot, "shroomiteIngot");
+		
+		GameRegistry.registerItem(ShroomitePickaxe, "Shroomite Pickaxe");
+		LanguageRegistry.addName(ShroomitePickaxe, "Shroomite Pickaxe");
 		
 		// Harvest level
 		MinecraftForge.setBlockHarvestLevel(ShroomiteOre, "pickaxe", 2);
