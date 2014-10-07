@@ -12,6 +12,8 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import dk.nvknudsen.theshrooms.blocks.ShroomiteOre;
+import dk.nvknudsen.theshrooms.items.ShroomiteIngot;
 import dk.nvknudsen.theshrooms.worldgen.ShroomiteOreGen;
 
 
@@ -60,5 +62,6 @@ public class Main
 		
 		// World generators
 		GameRegistry.registerWorldGenerator(new ShroomiteOreGen());
+		
 	}
 }
