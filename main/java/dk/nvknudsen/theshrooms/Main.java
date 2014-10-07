@@ -1,13 +1,13 @@
 package dk.nvknudsen.theshrooms;
 
 // Imports
-import java.lang.reflect.Proxy;
-
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -17,38 +17,38 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import cpw.mods.fml.common.registry.EntityRegistry.EntityRegistration;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import dk.nvknudsen.theshrooms.blocks.ShroomiteOre;
 import dk.nvknudsen.theshrooms.items.ShroomiteIngot;
 import dk.nvknudsen.theshrooms.mob.Shroombie;
 import dk.nvknudsen.theshrooms.proxy.CommonProxy;
 import dk.nvknudsen.theshrooms.worldgen.ShroomiteOreGen;
 
-
 @Mod(modid = "theshrooms", version = Main.version)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
+
 
 // The main class
 public class Main
 {
 	
+	// Materials
+	public final static EnumToolMaterial ShroomiteToolMaterial = EnumHelper.addToolMaterial("Shroomite", 2, 1200, 12.0F, 2.0F, 30);
+	
 	// Blocks Here
 	public final static Block ShroomiteOre = new ShroomiteOre(501);
 	
 	// Items Here
-	public final  static Item ShroomiteIngot = new ShroomiteIngot(5001);
+	public final static Item ShroomiteIngot = new ShroomiteIngot(5001);
 	
 	@SidedProxy(clientSide="dk.nvknudsen.theshrooms.proxy.ClientProxy",serverSide="dk.nvknudsen.theshrooms.proxy.CommonProxy")
 	public static CommonProxy proxy;
 	
 	// Tools Here
-	
+	public final static Item ShroomitePickaxe = new ItemPickaxe(5051, ShroomiteToolMaterial).setUnlocalizedName("ShroomitePickaxe").setTextureName("theshrooms:ShroomitePickaxe");
 	
 	// The technical version
 	public final static String version = "a1.0.0";
-		
+
 	@EventHandler
 	public void init(FMLInitializationEvent e)
 	{
@@ -58,6 +58,9 @@ public class Main
 		// Block & Item registrations
 		GameRegistry.registerBlock(ShroomiteOre, "shroomiteOre");
 		GameRegistry.registerItem(ShroomiteIngot, "shroomiteIngot");
+		
+		GameRegistry.registerItem(ShroomitePickaxe, "Shroomite Pickaxe");
+		LanguageRegistry.addName(ShroomitePickaxe, "Shroomite Pickaxe");
 		
 		// Harvest level
 		MinecraftForge.setBlockHarvestLevel(ShroomiteOre, "pickaxe", 2);
