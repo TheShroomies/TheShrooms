@@ -41,9 +41,7 @@ public class Main
 	
 	// Just the unofficial version
 	public final static String version = "a1.0.0";
-	
-	EventManager eventmanager = new EventManager();
-	
+		
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e)
 	{
@@ -64,8 +62,6 @@ public class Main
 		
 		GameRegistry.registerItem(ShroomiteIngot, "Shroomiteingot");
 		LanguageRegistry.addName(ShroomiteIngot, "Shroomite ingot");
-		
-		GameRegistry.registerWorldGenerator(eventmanager);
 		
 	}
 }
