@@ -10,6 +10,7 @@ import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
@@ -70,6 +71,24 @@ public class Main
 		GameRegistry.registerItem(ShroomiteShovel, "Shroomite Shovel");
 		GameRegistry.registerItem(ShroomiteSword, "Shroomite Sword");
 		GameRegistry.registerItem(ShroomiteAxe, "Shroomite Axe");
+
+		// Crafting registrations
+		GameRegistry.addShapedRecipe(new ItemStack(ShroomiteAxe),
+				"xx ", "xy ", " y ",
+				'x', new ItemStack(ShroomiteIngot), 'y', new ItemStack(Item.stick)
+		);
+		GameRegistry.addShapedRecipe(new ItemStack(ShroomitePickaxe),
+				"xxx", " y ", " y ",
+				'x', new ItemStack(ShroomiteIngot), 'y', new ItemStack(Item.stick)
+		);
+		GameRegistry.addShapedRecipe(new ItemStack(ShroomiteShovel),
+				" x ", " y ", " y ",
+				'x', new ItemStack(ShroomiteIngot), 'y', new ItemStack(Item.stick)
+		);
+		GameRegistry.addShapedRecipe(new ItemStack(ShroomiteSword),
+				" x ", " x ", " y ",
+				'x', new ItemStack(ShroomiteIngot), 'y', new ItemStack(Item.stick)
+		);
 		
 		// Harvest level
 		MinecraftForge.setBlockHarvestLevel(ShroomiteOre, "pickaxe", 2);
