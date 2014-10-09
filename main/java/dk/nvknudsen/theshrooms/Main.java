@@ -65,14 +65,11 @@ public class Main
 		GameRegistry.registerBlock(ShroomiteOre, "shroomiteOre");
 		GameRegistry.registerItem(ShroomiteIngot, "shroomiteIngot");
 		
+		// Tools
 		GameRegistry.registerItem(ShroomitePickaxe, "Shroomite Pickaxe");
-		LanguageRegistry.addName(ShroomitePickaxe, "Shroomite Pickaxe");
 		GameRegistry.registerItem(ShroomiteShovel, "Shroomite Shovel");
-		LanguageRegistry.addName(ShroomiteShovel, "Shroomite Shovel");
 		GameRegistry.registerItem(ShroomiteSword, "Shroomite Sword");
-		LanguageRegistry.addName(ShroomiteSword, "Shroomite Sword");
 		GameRegistry.registerItem(ShroomiteAxe, "Shroomite Axe");
-		LanguageRegistry.addName(ShroomiteAxe, "Shroomite Axe");
 		
 		// Harvest level
 		MinecraftForge.setBlockHarvestLevel(ShroomiteOre, "pickaxe", 2);
@@ -87,6 +84,10 @@ public class Main
 		// Language registrations
 		LanguageRegistry.addName(ShroomiteIngot, "Shroomite ingot");
 		LanguageRegistry.addName(ShroomiteOre, "Shroomite Ore");
+		LanguageRegistry.addName(ShroomiteAxe, "Shroomite Axe");
+		LanguageRegistry.addName(ShroomiteSword, "Shroomite Sword");
+		LanguageRegistry.addName(ShroomiteShovel, "Shroomite Shovel");
+		LanguageRegistry.addName(ShroomitePickaxe, "Shroomite Pickaxe");
 		
 		// World generators
 		GameRegistry.registerWorldGenerator(new ShroomiteOreGen());
