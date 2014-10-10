@@ -10,7 +10,6 @@ import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
@@ -94,8 +93,8 @@ public class Main
 		MinecraftForge.setBlockHarvestLevel(ShroomiteOre, "pickaxe", 2);
 		
 		// Entity registrations
-		EntityRegistry.registerModEntity(Shroombie.class, "shroombie", 0, this, 80, 1, true);
-		EntityRegistry.addSpawn(Shroombie.class, 10, 0, 1, EnumCreatureType.creature);
+		registerEntity(Shroombie.class, "shroombie");
+		EntityRegistry.addSpawn(Shroombie.class, 10, 0, 4, EnumCreatureType.monster);
 		
 		// Melting registrations
 		GameRegistry.addSmelting(ShroomiteOre.blockID, new ItemStack(ShroomiteIngot), 1.0F);
@@ -114,5 +113,10 @@ public class Main
 		// Proxy registrations
 		proxy.registerRenderThings();
 		
+	}
+	
+	public void registerEntity(Class entityClass, String name)
+	{
+		EntityRegistry.registerModEntity(entityClass, name, 0, this, 64, 1, true);
 	}
 }
