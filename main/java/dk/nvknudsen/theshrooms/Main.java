@@ -1,6 +1,8 @@
 package dk.nvknudsen.theshrooms;
 
 // Imports
+import java.util.logging.Logger;
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.item.EnumToolMaterial;
@@ -12,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -54,12 +57,15 @@ public class Main
 	
 	// The technical version
 	public final static String version = "a1.0.0";
+	
+	public final static Logger log = Logger.getLogger("theshrooms");
 
 	@EventHandler
 	public void init(FMLInitializationEvent e)
 	{
 		
-		System.out.println("Initializing TheShrooms v. "+version);
+		log.info("Initializing TheShrooms v. "+version);
+		
 		
 		// Block & Item registrations
 		GameRegistry.registerBlock(ShroomiteOre, "shroomiteOre");
