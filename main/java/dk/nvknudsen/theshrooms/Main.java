@@ -29,7 +29,7 @@ import dk.nvknudsen.theshrooms.mob.Shroombie;
 import dk.nvknudsen.theshrooms.proxy.CommonProxy;
 import dk.nvknudsen.theshrooms.worldgen.ShroomiteOreGen;
 
-@Mod(modid = "theshrooms", version = Main.version)
+@Mod(modid = Main.modid, version = Main.version)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 
@@ -57,6 +57,7 @@ public class Main
 	
 	// The technical version
 	public final static String version = "a1.0.0";
+	public final static String modid = "theshrooms";
 	
 	public final static Logger log = Logger.getLogger("theshrooms");
 
