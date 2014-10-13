@@ -1,10 +1,10 @@
 package dk.nvknudsen.theshrooms.blocks;
 
-import dk.nvknudsen.theshrooms.mob.Shroombie;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.World;
+import dk.nvknudsen.theshrooms.mob.Shroombie;
 
 public class ShroomiteOre extends Block
 {

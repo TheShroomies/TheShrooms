@@ -2,11 +2,9 @@ package dk.nvknudsen.theshrooms.worldgen;
 
 import java.util.Random;
 
-import dk.nvknudsen.theshrooms.Main;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenMinable;
+import dk.nvknudsen.theshrooms.Main;
 
 public class ShroomiteOreGen extends OreGen
 {
