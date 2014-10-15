@@ -65,7 +65,7 @@ public class Main
 	public void init(FMLInitializationEvent e)
 	{
 		
-		log.info("Initializing TheShrooms v. "+version);
+		log.info("Initializing TheShrooms ("+modid+") v. "+version);
 		
 		
 		// Block & Item registrations
