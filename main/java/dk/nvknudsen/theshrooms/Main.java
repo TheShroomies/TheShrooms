@@ -38,22 +38,22 @@ public class Main
 {
 	
 	// Materials
-	public final static EnumToolMaterial ShroomiteToolMaterial = EnumHelper.addToolMaterial("Shroomite", 2, 1200, 12.0F, 2.0F, 30);
+	public final static EnumToolMaterial shroomiteToolMaterial = EnumHelper.addToolMaterial("Shroomite", 2, 1200, 12.0F, 2.0F, 30);
 	
 	// Blocks Here
-	public final static Block ShroomiteOre = new ShroomiteOre(501);
+	public final static Block shroomiteOre = new ShroomiteOre(501);
 	
 	// Items Here
-	public final static Item ShroomiteIngot = new ShroomiteIngot(5001);
+	public final static Item shroomiteIngot = new ShroomiteIngot(5001);
 	
 	@SidedProxy(clientSide="dk.nvknudsen.theshrooms.proxy.ClientProxy",serverSide="dk.nvknudsen.theshrooms.proxy.CommonProxy")
 	public static CommonProxy proxy;
 	
 	// Tools Here
-	public final static Item ShroomitePickaxe = new ItemPickaxe(5051, ShroomiteToolMaterial).setUnlocalizedName("ShroomitePickaxe").setTextureName("theshrooms:ShroomitePickaxe");
-	public final static Item ShroomiteShovel = new ItemSpade(5052, ShroomiteToolMaterial).setUnlocalizedName("ShroomiteShovel").setTextureName("theshrooms:ShroomiteShovel");
-	public final static Item ShroomiteSword = new ItemSword(5053, ShroomiteToolMaterial).setUnlocalizedName("ShroomiteSword").setTextureName("theshrooms:ShroomiteSword");
-	public final static Item ShroomiteAxe = new ItemAxe(5054, ShroomiteToolMaterial).setUnlocalizedName("ShroomiteAxe").setTextureName("theshrooms:ShroomiteAxe");
+	public final static Item shroomitePickaxe = new ItemPickaxe(5051, shroomiteToolMaterial).setUnlocalizedName("ShroomitePickaxe").setTextureName("theshrooms:ShroomitePickaxe");
+	public final static Item shroomiteShovel = new ItemSpade(5052, shroomiteToolMaterial).setUnlocalizedName("ShroomiteShovel").setTextureName("theshrooms:ShroomiteShovel");
+	public final static Item shroomiteSword = new ItemSword(5053, shroomiteToolMaterial).setUnlocalizedName("ShroomiteSword").setTextureName("theshrooms:ShroomiteSword");
+	public final static Item shroomiteAxe = new ItemAxe(5054, shroomiteToolMaterial).setUnlocalizedName("ShroomiteAxe").setTextureName("theshrooms:ShroomiteAxe");
 	
 	// The technical version
 	public final static String version = "a1.0.0";
@@ -69,50 +69,50 @@ public class Main
 		
 		
 		// Block & Item registrations
-		GameRegistry.registerBlock(ShroomiteOre, "shroomiteOre");
-		GameRegistry.registerItem(ShroomiteIngot, "shroomiteIngot");
+		GameRegistry.registerBlock(shroomiteOre, "shroomiteOre");
+		GameRegistry.registerItem(shroomiteIngot, "shroomiteIngot");
 		
 		// Tools
-		GameRegistry.registerItem(ShroomitePickaxe, "Shroomite Pickaxe");
-		GameRegistry.registerItem(ShroomiteShovel, "Shroomite Shovel");
-		GameRegistry.registerItem(ShroomiteSword, "Shroomite Sword");
-		GameRegistry.registerItem(ShroomiteAxe, "Shroomite Axe");
+		GameRegistry.registerItem(shroomitePickaxe, "Shroomite Pickaxe");
+		GameRegistry.registerItem(shroomiteShovel, "Shroomite Shovel");
+		GameRegistry.registerItem(shroomiteSword, "Shroomite Sword");
+		GameRegistry.registerItem(shroomiteAxe, "Shroomite Axe");
 
 		// Crafting registrations
-		GameRegistry.addShapedRecipe(new ItemStack(ShroomiteAxe),
+		GameRegistry.addShapedRecipe(new ItemStack(shroomiteAxe),
 				"xx ", "xy ", " y ",
-				'x', new ItemStack(ShroomiteIngot), 'y', new ItemStack(Item.stick)
+				'x', new ItemStack(shroomiteIngot), 'y', new ItemStack(Item.stick)
 		);
-		GameRegistry.addShapedRecipe(new ItemStack(ShroomitePickaxe),
+		GameRegistry.addShapedRecipe(new ItemStack(shroomitePickaxe),
 				"xxx", " y ", " y ",
-				'x', new ItemStack(ShroomiteIngot), 'y', new ItemStack(Item.stick)
+				'x', new ItemStack(shroomiteIngot), 'y', new ItemStack(Item.stick)
 		);
-		GameRegistry.addShapedRecipe(new ItemStack(ShroomiteShovel),
+		GameRegistry.addShapedRecipe(new ItemStack(shroomiteShovel),
 				" x ", " y ", " y ",
-				'x', new ItemStack(ShroomiteIngot), 'y', new ItemStack(Item.stick)
+				'x', new ItemStack(shroomiteIngot), 'y', new ItemStack(Item.stick)
 		);
-		GameRegistry.addShapedRecipe(new ItemStack(ShroomiteSword),
+		GameRegistry.addShapedRecipe(new ItemStack(shroomiteSword),
 				" x ", " x ", " y ",
-				'x', new ItemStack(ShroomiteIngot), 'y', new ItemStack(Item.stick)
+				'x', new ItemStack(shroomiteIngot), 'y', new ItemStack(Item.stick)
 		);
 		
 		// Harvest level
-		MinecraftForge.setBlockHarvestLevel(ShroomiteOre, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(shroomiteOre, "pickaxe", 2);
 		
 		// Entity registrations
 		registerEntity(Shroombie.class, "shroombie");
 		EntityRegistry.addSpawn(Shroombie.class, 10, 0, 4, EnumCreatureType.monster);
 		
 		// Melting registrations
-		GameRegistry.addSmelting(ShroomiteOre.blockID, new ItemStack(ShroomiteIngot), 1.0F);
+		GameRegistry.addSmelting(shroomiteOre.blockID, new ItemStack(shroomiteIngot), 1.0F);
 		
 		// Language registrations
-		LanguageRegistry.addName(ShroomiteIngot, "Shroomite ingot");
-		LanguageRegistry.addName(ShroomiteOre, "Shroomite Ore");
-		LanguageRegistry.addName(ShroomiteAxe, "Shroomite Axe");
-		LanguageRegistry.addName(ShroomiteSword, "Shroomite Sword");
-		LanguageRegistry.addName(ShroomiteShovel, "Shroomite Shovel");
-		LanguageRegistry.addName(ShroomitePickaxe, "Shroomite Pickaxe");
+		LanguageRegistry.addName(shroomiteIngot, "Shroomite ingot");
+		LanguageRegistry.addName(shroomiteOre, "Shroomite Ore");
+		LanguageRegistry.addName(shroomiteAxe, "Shroomite Axe");
+		LanguageRegistry.addName(shroomiteSword, "Shroomite Sword");
+		LanguageRegistry.addName(shroomiteShovel, "Shroomite Shovel");
+		LanguageRegistry.addName(shroomitePickaxe, "Shroomite Pickaxe");
 		
 		// World generators
 		GameRegistry.registerWorldGenerator(new ShroomiteOreGen());

@@ -13,7 +13,7 @@ public class ShroomiteOreGen extends OreGen
 		super(50,30);
 	}
 
-	private WorldGenMinable generator=new WorldGenMinable(Main.ShroomiteOre.blockID, 3);
+	private WorldGenMinable generator=new WorldGenMinable(Main.shroomiteOre.blockID, 3);
 
 	@Override
 	protected void generateOverworld(Random random, int chunkX, int chunkY, int chunkZ, World world)
