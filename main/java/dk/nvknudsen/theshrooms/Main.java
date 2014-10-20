@@ -4,6 +4,8 @@ package dk.nvknudsen.theshrooms;
 import java.util.logging.Logger;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockMycelium;
+import net.minecraft.block.StepSound;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
@@ -14,7 +16,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
-import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -23,6 +24,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import dk.nvknudsen.theshrooms.blocks.ShroomGrass;
 import dk.nvknudsen.theshrooms.blocks.ShroomiteOre;
 import dk.nvknudsen.theshrooms.items.ShroomiteIngot;
 import dk.nvknudsen.theshrooms.mob.Shroombie;
@@ -42,6 +44,7 @@ public class Main
 	
 	// Blocks Here
 	public final static Block shroomiteOre = new ShroomiteOre(501);
+	public final static Block shroomGrass = new ShroomGrass(502).setTextureName("theshrooms:grass/grass").setUnlocalizedName("ShroomGrass").setHardness(0.6f).setStepSound(Block.soundGrassFootstep);
 	
 	// Items Here
 	public final static Item shroomiteIngot = new ShroomiteIngot(5001);
@@ -70,6 +73,7 @@ public class Main
 		
 		// Block & Item registrations
 		GameRegistry.registerBlock(shroomiteOre, "shroomiteOre");
+		GameRegistry.registerBlock(shroomGrass, "shroomGrass");
 		GameRegistry.registerItem(shroomiteIngot, "shroomiteIngot");
 		
 		// Tools
@@ -113,6 +117,7 @@ public class Main
 		LanguageRegistry.addName(shroomiteSword, "Shroomite Sword");
 		LanguageRegistry.addName(shroomiteShovel, "Shroomite Shovel");
 		LanguageRegistry.addName(shroomitePickaxe, "Shroomite Pickaxe");
+		LanguageRegistry.addName(shroomGrass, "Shroom Grass");
 		
 		// World generators
 		GameRegistry.registerWorldGenerator(new ShroomiteOreGen());
